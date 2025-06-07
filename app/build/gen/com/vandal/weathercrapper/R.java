@@ -29,17 +29,22 @@ public final class R {
         public static final int ic_partly_cloudy_night_dark=0x7f02000f;
         public static final int ic_rainy=0x7f020010;
         public static final int ic_rainy_dark=0x7f020011;
-        public static final int ic_thermostat_dark=0x7f020012;
-        public static final int ic_thunderstorm=0x7f020013;
-        public static final int ic_thunderstorm_dark=0x7f020014;
-        public static final int ic_water_drop=0x7f020015;
-        public static final int ic_water_drop_dark=0x7f020016;
-        public static final int meteoillustration=0x7f020017;
-        public static final int nuageux=0x7f020018;
+        public static final int ic_solar_power=0x7f020012;
+        public static final int ic_solar_power_dark=0x7f020013;
+        public static final int ic_sunny=0x7f020014;
+        public static final int ic_sunny_dark=0x7f020015;
+        public static final int ic_thermostat_dark=0x7f020016;
+        public static final int ic_thunderstorm=0x7f020017;
+        public static final int ic_thunderstorm_dark=0x7f020018;
+        public static final int ic_water_drop=0x7f020019;
+        public static final int ic_water_drop_dark=0x7f02001a;
+        public static final int meteoillustration=0x7f02001b;
+        public static final int nuageux=0x7f02001c;
     }
     public static final class id {
-        public static final int my_button=0x7f060001;
+        public static final int my_button=0x7f060002;
         public static final int my_image=0x7f060000;
+        public static final int weather_output=0x7f060001;
     }
     public static final class layout {
         public static final int main=0x7f030000;

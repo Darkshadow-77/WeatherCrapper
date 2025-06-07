@@ -24,12 +24,23 @@
 			android:layout_height="match_parent"
 			android:orientation="vertical"
 		>
+			
 			<TextView
-			android:text=" Vent"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:drawableLeft="@drawable/ic_air_dark"
-			android:textSize="18sp"
+				android:text=" Ensoleillé"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@drawable/ic_sunny_dark"
+				android:textSize="18sp"
+				android:textStyle="bold"
+			/>
+		
+			<TextView
+				android:text=" Vent"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@drawable/ic_air_dark"
+				android:textSize="18sp"
+				android:textStyle="bold"
 			/>
 		
 			<TextView
@@ -38,11 +49,31 @@
 				android:layout_height="wrap_content"
 				android:drawableLeft="@drawable/ic_humidity_low_dark"
 				android:textSize="18sp"
+				android:textStyle="bold"
+			/>
+		
+			<TextView
+				android:text=" Température"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@drawable/ic_device_thermostat_dark"
+				android:textSize="18sp"
+				android:textStyle="bold"
 			/>
 		</LinearLayout>
 	
 	</LinearLayout>
 	 
+				<TextView
+							android:id="@+id/weather_output"
+				android:text=" Température"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@drawable/ic_device_thermostat_dark"
+				android:textSize="18sp"
+				android:textStyle="bold"
+					android:layout_marginTop="10dp"
+			/>
 
 	<Button
 		android:id="@+id/my_button"
