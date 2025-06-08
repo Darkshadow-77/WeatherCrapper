@@ -26,6 +26,8 @@ public class MainActivity extends Activity
         setContentView(R.layout.main);
 		
 		getWeatherData();
+    	TextView weather = findViewById(R.id.weather_output);
+    	weather.setText(weatherData);
 		Button myButton = findViewById(R.id.my_button);
 
 		myButton.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +44,7 @@ public class MainActivity extends Activity
 				@Override
 				public void run() {
 					try {
-						String apiKey = "TA_CLE_API"; // remplace ici avec ta clé personnelle
+						String apiKey = "eb6ebf16116a402a804183302250606"; // remplace ici avec ta clé personnelle
 						String city = "Paris";
 						String urlString = "https://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city + "&aqi=no";
 
