@@ -18,16 +18,16 @@ import java.lang.Thread;
 public class MainActivity extends Activity 
 {
 	String weatherData ="";
-	
+	TextView weather;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		
-		getWeatherData();
-    	TextView weather = findViewById(R.id.weather_output);
-    	weather.setText(weatherData);
+		weather = findViewById(R.id.weather_output);
+   		          getWeatherData();
+ 
 		Button myButton = findViewById(R.id.my_button);
 
 		myButton.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,9 @@ public class MainActivity extends Activity
 						String jsonData = response.toString();
 
 						weatherData = jsonData;
-
+						runOnUiThread(()->{
+							   	weather.setText(weatherData);
+						});
 						// Tu peux ensuite faire un runOnUiThread() ici pour afficher les données
 
 					} catch (Exception e) {
