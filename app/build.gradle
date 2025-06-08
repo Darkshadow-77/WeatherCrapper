@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.0"
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.vandal.weathercrapper"
-        minSdkVersion 14
-        targetSdkVersion 29
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
