@@ -26,6 +26,7 @@
 		>
 			
 			<TextView
+				android:id="@+id/condition_text"
 				android:text=" Ensoleillé"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
 			/>
 		
 			<TextView
+				android:id="@+id/wind_text"
 				android:text=" Vent"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -44,6 +46,7 @@
 			/>
 		
 			<TextView
+				android:id="@+id/hum_text"
 				android:text=" Humidité"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -53,6 +56,7 @@
 			/>
 		
 			<TextView
+				android:id="@+id/temp_text"
 				android:text=" Température"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -63,25 +67,23 @@
 		</LinearLayout>
 	
 	</LinearLayout>
-	 
-				<TextView
-							android:id="@+id/weather_output"
-				android:text=" Température"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableLeft="@drawable/ic_device_thermostat_dark"
-				android:textSize="18sp"
-				android:textStyle="bold"
-					android:layout_marginTop="10dp"
-			/>
-
+	
 	<Button
 		android:id="@+id/my_button"
 		android:text="Click here"
 		android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_marginTop="10dp"
 	/>
 	
+					<TextView
+						android:id="@+id/error_output"
+				android:text="All is right"
+						android:textColor="#D32F2F"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+					android:layout_marginTop="10dp"
+			/>
 
 </LinearLayout>

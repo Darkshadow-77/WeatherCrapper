@@ -13,19 +13,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.lang.Thread;
+import org.json.JSONObject;
 
 
 public class MainActivity extends Activity 
 {
-	String weatherData ="";
-	TextView weather;
+	TextView errorMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		weather = findViewById(R.id.weather_output);
+		errorMessage = findViewById(R.id.error_output);
    		          getWeatherData();
  
 		Button myButton = findViewById(R.id.my_button);
@@ -64,15 +64,24 @@ public class MainActivity extends Activity
 						reader.close();
 
 						String jsonData = response.toString();
-
-						weatherData = jsonData;
-						runOnUiThread(()->{
-							   	weather.setText(weatherData);
-						});
-						// Tu peux ensuite faire un runOnUiThread() ici pour afficher les données
+						
+						JSONObject obj = new JSONObject(jsonData);
+						JSONObject current = obj.getJSONObject("current");
+						
+						String condition = current.getJSONObject("condition").getString("text");
+						String wind = current.getString("wind_mph");
+						String humidity = current.getString("humidity");
+						String temperature = current.getString("temp_c");
+						
+						WeatherDataDisplayer dsp = new WeatherDataDisplayer(MainActivity.this ,condition,wind,humidity,temperature);
+						
+						dsp.display(R.id.condition_text,R.id.wind_text,R.id.hum_text,R.id.temp_text);
+						
 
 					} catch (Exception e) {
-						e.printStackTrace();
+						  						runOnUiThread(()->{
+							   	errorMessage.setText("Une erreur est survenue lors de l'appel du service");
+						});
 					}
 				}
 			}).start();
