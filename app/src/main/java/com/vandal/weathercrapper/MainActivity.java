@@ -92,7 +92,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
     return true;
 }
 
-@
+@Override
 public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.action_refresh) {
         getWeatherData(); // ou une autre méthode à appeler
