@@ -86,5 +86,19 @@ public class MainActivity extends Activity
 				}
 			}).start();
 	}
+	@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return true;
+}
+
+@
+public boolean onOptionsItemSelected(MenuItem item) {
+    if (item.getItemId() == R.id.action_refresh) {
+        getWeatherData(); // ou une autre méthode à appeler
+        return true;
+    }
+    return super.onOptionsItemSelected(item);
+}
 }
 
