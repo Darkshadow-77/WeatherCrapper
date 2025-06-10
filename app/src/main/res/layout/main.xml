@@ -75,15 +75,5 @@
 		android:layout_height="wrap_content"
 		android:layout_marginTop="10dp"
 	/>
-	
-					<TextView
-						android:id="@+id/error_output"
-				android:text="All is right"
-						android:textColor="#D32F2F"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_horizontal"
-					android:layout_marginTop="10dp"
-			/>
 
 </LinearLayout>

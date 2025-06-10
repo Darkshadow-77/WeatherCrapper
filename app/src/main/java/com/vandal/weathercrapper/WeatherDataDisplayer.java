@@ -2,6 +2,7 @@ package com.vandal.weathercrapper;
 
 import android.app.Activity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WeatherDataDisplayer {
     
@@ -37,7 +38,10 @@ public class WeatherDataDisplayer {
             humTextView.setText(" Humidité :"+humidity+"%");
             tempTextView.setText(" Température :"+temperature+" °C");
 
+            Toast.makeText(activity,"Chargé avec succès",Toast.LENGTH_SHORT).show();
+            
         });
+        
     }
     
 }

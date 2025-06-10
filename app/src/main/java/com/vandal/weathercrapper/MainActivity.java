@@ -20,14 +20,11 @@ import org.json.JSONObject;
 
 public class MainActivity extends Activity 
 {
-	TextView errorMessage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		errorMessage = findViewById(R.id.error_output);
    		          getWeatherData();
  
 		Button myButton = findViewById(R.id.my_button);
@@ -82,8 +79,8 @@ public class MainActivity extends Activity
 
 					} catch (Exception e) {
 						  						runOnUiThread(()->{
-							   	errorMessage.setText("Une erreur est survenue lors de l'appel du service");
-						});
+						  							Toast.makeText(MainActivity.this,"Une erreur est survenue lors du chargement du service",Toast.LENGTH_SHORT).show();
+							   							});
 					}
 				}
 			}).start();
