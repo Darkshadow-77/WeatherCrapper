@@ -33,7 +33,7 @@ public class WeatherDataDisplayer {
             TextView humTextView = activity.findViewById(humId);
             TextView tempTextView = activity.findViewById(tempId);
             
-            condTextView.setText(condition);
+            condTextView.setText(" "+condition);
             winTextView.setText(" Vent :"+wind+" mph");
             humTextView.setText(" Humidité :"+humidity+"%");
             tempTextView.setText(" Température :"+temperature+" °C");

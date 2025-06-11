@@ -25,20 +25,25 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-   		          getWeatherData();
- 
-		Button myButton = findViewById(R.id.my_button);
-
-		myButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					// Code à exécuter au clic
-					Toast.makeText(MainActivity.this, "Tu as cliqué le bouton !", Toast.LENGTH_SHORT).show();
-				}
-			});
-		
+    	    getWeatherData();
     }
-	private void getWeatherData() {
+
+    	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    if (item.getItemId() == R.id.action_refresh) {
+        getWeatherData(); // ou une autre méthode à appeler
+        return true;
+    }
+    return super.onOptionsItemSelected(item);
+}
+	
+		private void getWeatherData() {
 		new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -85,19 +90,6 @@ public class MainActivity extends Activity
 				}
 			}).start();
 	}
-	@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.main_menu, menu);
-    return true;
-}
-
-@Override
-public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.action_refresh) {
-        getWeatherData(); // ou une autre méthode à appeler
-        return true;
-    }
-    return super.onOptionsItemSelected(item);
-}
+	
 }
 

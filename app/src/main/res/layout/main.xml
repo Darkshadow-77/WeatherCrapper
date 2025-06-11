@@ -4,6 +4,16 @@
 	android:orientation="vertical"
      >
 	
+	<TextView
+				android:text="Météo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+		 android:layout_gravity="center_horizontal"
+				android:drawableLeft="@drawable/ic_partly_cloudy_day_dark"
+				android:textSize="20sp"
+				android:textStyle="bold"
+			/>
+	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="150dp"
@@ -68,12 +78,187 @@
 	
 	</LinearLayout>
 	
-	<Button
-		android:id="@+id/my_button"
-		android:text="Click here"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-	/>
+			<LinearLayout
+						  android:layout_width="match_parent"
+						  android:layout_height="match_parent"
+    	android:orientation="vertical"
+						>
+						
+	<TextView
+				android:text="Utilitaire"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+		 android:layout_gravity="center_horizontal"
+				android:drawableLeft="@drawable/ic_handyman_dark"
+				android:textSize="20sp"
+				android:textStyle="bold"
+			/>
+						
+						<LinearLayout
+									     android:layout_width="match_parent"
+						      android:layout_height="wrap_content"
+    	    android:orientation="horizontal"
+									     android:gravity="center"
+									>
+									   				<LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_lightbulb_2_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Éclairage"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/light_state"
+				                android:text="Éclairage/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+														   				<LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_heat_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Chauffage"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/heat_state"
+				                android:text="Chauffage/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									
+									       <LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_heat_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Climatisation"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/cold_state"
+				                android:text="Climatisation/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									
+									   <LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_mode_fan_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Ventilation"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/fan_state"
+				                android:text="Ventilation/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									   <LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_browse"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Fenêtres"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/win_state"
+				                android:text="Fenêtres/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									   <LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_garage_home_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Garage"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/gar_state"
+				                android:text="Garage/"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									   <LinearLayout
+									   							android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+									   							android:orientation="vertical">
+									   							
+									   							     <ImageButton
+									   							     			 android:layout_width="48dp"
+									   							     			 android:layout_height="48dp"
+									   							     			 android:src="@drawable/ic_receipt_long_dark"
+									   							     			 android:background="?attr/selectableItemBackgroundBorderless"
+									   							     			 android:contentDescription="Consommation"
+									   							     			/>
+									   							     
+									   							     <TextView
+									   							     							android:id="@+id/cons_state"
+				                android:text="Consommation"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+				                android:textSize="18sp"
+				                android:textStyle="bold"
+									   							     			/>
+									   				</LinearLayout>
+									
+						</LinearLayout>
+						
+			</LinearLayout>
 
 </LinearLayout>
