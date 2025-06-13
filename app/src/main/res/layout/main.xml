@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:orientation="vertical"
+	    android:orientation="vertical"
      >
 	
 	<TextView
@@ -10,8 +10,10 @@
 				android:layout_height="wrap_content"
 		 android:layout_gravity="center_horizontal"
 				android:drawableLeft="@drawable/ic_partly_cloudy_day_dark"
-				android:textSize="20sp"
+				android:textSize="24sp"
 				android:textStyle="bold"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"
 			/>
 	
 	<LinearLayout
@@ -90,20 +92,24 @@
 				android:layout_height="wrap_content"
 		 android:layout_gravity="center_horizontal"
 				android:drawableLeft="@drawable/ic_handyman_dark"
-				android:textSize="20sp"
+				android:textSize="24sp"
 				android:textStyle="bold"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"
 			/>
 						
-						<LinearLayout
+						<GridLayout
 									     android:layout_width="match_parent"
 						      android:layout_height="wrap_content"
-    	    android:orientation="horizontal"
+    	    android:columnCount="2"
 									     android:gravity="center"
 									>
 									   				<LinearLayout
 									   							android:layout_width="wrap_content"
 						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   							android:orientation="vertical"
+									   							android:layout_margin="10dp"
+									   							>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -123,9 +129,11 @@
 									   							     			/>
 									   				</LinearLayout>
 														   				<LinearLayout
-									   							android:layout_width="wrap_content"
-						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									    							android:layout_width="wrap_content"
+						         android:layout_height="wrap_content"
+									   							  android:orientation="vertical"
+														   							android:layout_margin="10dp"
+														   							>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -146,9 +154,11 @@
 									   				</LinearLayout>
 									
 									       <LinearLayout
-									   							android:layout_width="wrap_content"
-						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   						  	android:layout_width="wrap_content"
+						         android:layout_height="wrap_content"
+									   				  			android:orientation="vertical"
+									       			android:layout_margin="10dp"
+									       			>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -171,7 +181,9 @@
 									   <LinearLayout
 									   							android:layout_width="wrap_content"
 						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   							android:orientation="vertical"
+									   			 android:layout_margin="10dp"
+									   			>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -193,7 +205,9 @@
 									   <LinearLayout
 									   							android:layout_width="wrap_content"
 						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   							android:orientation="vertical"
+									   		  	android:layout_margin="10dp"
+									   			>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -215,7 +229,9 @@
 									   <LinearLayout
 									   							android:layout_width="wrap_content"
 						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   							android:orientation="vertical"
+									   		  	android:layout_margin="10dp"
+									   			>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -237,7 +253,9 @@
 									   <LinearLayout
 									   							android:layout_width="wrap_content"
 						        android:layout_height="wrap_content"
-									   							android:orientation="vertical">
+									   							android:orientation="vertical"
+									   			  android:layout_margin="10dp"
+									   			>
 									   							
 									   							     <ImageButton
 									   							     			 android:layout_width="48dp"
@@ -257,7 +275,7 @@
 									   							     			/>
 									   				</LinearLayout>
 									
-						</LinearLayout>
+						</GridLayout>
 						
 			</LinearLayout>
 
