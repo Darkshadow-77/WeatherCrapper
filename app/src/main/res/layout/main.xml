@@ -103,7 +103,7 @@
 						      android:layout_height="wrap_content"
     	    android:columnCount="4"
 									     android:gravity="center"
-									     android:orentation="horizontale"  
+									     android:orientation="horizontal"  
 									>
 									   				<LinearLayout
 									   							android:layout_width="wrap_content"
