@@ -125,7 +125,7 @@
 				                android:text="Éclairage/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -149,7 +149,7 @@
 				                android:text="Chauffage/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -174,7 +174,7 @@
 				                android:text="Climatisation/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -199,7 +199,7 @@
 				                android:text="Ventilation/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -223,7 +223,7 @@
 				                android:text="Fenêtres/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -247,7 +247,7 @@
 				                android:text="Garage/"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
@@ -271,7 +271,7 @@
 				                android:text="Consommation"
 				                android:layout_width="wrap_content"
 				                android:layout_height="wrap_content"
-				                android:textSize="18sp"
+				                android:textSize="12sp"
 				                android:textStyle="bold"
 									   							     			/>
 									   				</LinearLayout>
