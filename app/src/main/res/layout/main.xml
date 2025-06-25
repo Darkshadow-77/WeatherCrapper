@@ -85,7 +85,7 @@
 		android:layout_marginBottom="20dp" />
 
     <!-- Section utilitaire -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -97,19 +97,18 @@
             android:layout_height="wrap_content"
             android:columnCount="3"
             android:layout_gravity="center"
-            android:orientation="horizontal"
-			android:layout_centerInParent="true">
+            android:orientation="horizontal">
 
             <!-- Éclairage -->
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_lightbulb_2_dark"
                     android:background="#FFF3E0"
                     android:contentDescription="Éclairage" />
@@ -126,14 +125,14 @@
 
             <!-- Chauffage -->
             <LinearLayout
-                android:layout_width="48dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_heat_dark"
                     android:background="#FFCDD2"
                     android:contentDescription="Chauffage" />
@@ -150,14 +149,14 @@
 
             <!-- Climatisation -->
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_ac_unit_dark"
                     android:background="#BBDEFB"
                     android:contentDescription="Climatisation" />
@@ -174,14 +173,14 @@
 
             <!-- Ventilation -->
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_mode_fan_dark"
                     android:background="#B2DFDB"
                     android:contentDescription="Ventilation" />
@@ -198,14 +197,14 @@
 
             <!-- Fenêtres -->
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_browse"
                     android:background="#E1BEE7"
                     android:contentDescription="Fenêtres" />
@@ -222,14 +221,14 @@
 
             <!-- Garage -->
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
 
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_garage_home_dark"
                     android:background="#D7CCC8"
                     android:contentDescription="Garage" />
@@ -246,29 +245,33 @@
 
         </GridLayout>
 		<!-- Consommation -->
-		<LinearLayout
-			android:layout_width="50dp"
+		<RelativeLayout
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:layout_margin="10dp"
-			android:layout_alignParentBottom="true"
-			android:layout_alignParentEnd="true">
-
-			<ImageButton
-				android:layout_width="50dp"
-				android:layout_height="50dp"
-				android:src="@drawable/ic_receipt_long_dark"
-				android:background="#FFE082"
-				android:contentDescription="Consommation" />
-
-			<TextView
-				android:id="@+id/cons_state"
-				android:text="Consommation"
-				android:layout_width="wrap_content"
+		>
+			<LinearLayout
+				android:layout_width="70dp"
 				android:layout_height="wrap_content"
-				android:textSize="12sp"
-				android:textStyle="bold"
-				android:ellipsize="end" />
-		</LinearLayout>
-    </RelativeLayout>
+				android:orientation="vertical"
+				android:layout_margin="10dp"
+				android:layout_alignParentEnd="true">
+
+				<ImageButton
+					android:layout_width="70dp"
+					android:layout_height="70dp"
+					android:src="@drawable/ic_receipt_long_dark"
+					android:background="#FFE082"
+					android:contentDescription="Consommation" />
+
+				<TextView
+					android:id="@+id/cons_state"
+					android:text="Consommation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="12sp"
+					android:textStyle="bold"
+					android:ellipsize="end" />
+			</LinearLayout>
+		</RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
