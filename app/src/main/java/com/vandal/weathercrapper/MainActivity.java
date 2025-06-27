@@ -83,9 +83,9 @@ public class MainActivity extends Activity
 						
 
 					} catch (Exception e) {
-						  						runOnUiThread(()->{
-						  							Toast.makeText(MainActivity.this,"Une erreur est survenue lors du chargement du service",Toast.LENGTH_SHORT).show();
-							   							});
+						  runOnUiThread(()->{
+						  	Toast.makeText(MainActivity.this,"Une erreur est survenue lors du chargement du service",Toast.LENGTH_SHORT).show();
+						});
 					}
 				}
 			}).start();
