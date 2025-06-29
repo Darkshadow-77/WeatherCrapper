@@ -291,8 +291,10 @@
 			android:id="@+id/panel"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
 			android:background="@drawable/box_rounded"
 			android:orientation="vertical"
+			android:visibility="gone"
 			android:gravity="center">
 			
 			<RelativeLayout
@@ -400,6 +402,7 @@
 					android:layout_alignParentEnd="true">
 					
 					<ImageButton
+						android:id="@+id/numeric_dec"
 						android:layout_width="30dp"
 						android:layout_height="30dp"
 						android:src="@drawable/ic_remove_dark"
@@ -413,6 +416,7 @@
 						android:textSize="18sp"
 						android:textStyle="bold"/>
 					<ImageButton
+						android:id="@+id/numeric_inc"
 						android:layout_width="30dp"
 						android:layout_height="30dp"
 						android:src="@drawable/ic_add_dark"
