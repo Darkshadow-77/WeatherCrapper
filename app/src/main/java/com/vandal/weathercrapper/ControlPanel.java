@@ -111,7 +111,7 @@ public class ControlPanel {
     // Dynamically sets up the panel components based on the title
     public void setupPanelByTitle() {
         switch (title.toLowerCase()) {
-            case "eclairage":
+            case "éclairage":
                 setLightPanel(
                     R.id.indoors_state_switch, R.id.indoors_state_text,
                     R.id.compound_state_switch, R.id.compound_state_text,
@@ -130,11 +130,11 @@ public class ControlPanel {
 
             case "ventilation":
                 setNumericPanel(R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 5,1,"");
-                setAnalogPanel(R.id.analog_seekbar, R.id.analog_state);
+                setStatePanel(R.id.state_switch, R.id.state_text);
                 break;
 
-            case "fenetres":
-                setNumericPanel(R.id.btn_decrease, R.id.btn_increase, R.id.label_numeric, 0, 100,10,"%");
+            case "fenêtres":
+                setNumericPanel(R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 100,10,"%");
                 break;
 
             case "garage":
