@@ -66,6 +66,10 @@ public class MainActivity extends Activity {
         findViewById(R.id.close_btn).setOnClickListener(v -> {
             PanelAnimator.slideOutToBottom(findViewById(R.id.panel), 300);
         });
+        findViewById(R.id.cons_btn).setOnClickListener(v -> {
+    Intent intent = new Intent(MainActivity.this, ConsumptionActivity.class);
+    startActivity(intent);
+});
     }
 
     @Override
