@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.heat_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Chauffage", true, true, true, false, false);
             controlPanel.setPanelLayout();
-            PanelAnimatorav2.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.cold_btn).setOnClickListener(v -> {
