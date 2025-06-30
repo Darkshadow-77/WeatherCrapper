@@ -30,41 +30,41 @@ public class MainActivity extends Activity {
         findViewById(R.id.light_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Éclairage", true, false, false, false, true);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.heat_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Chauffage", true, true, true, false, false);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorav2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.cold_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Climatisation", true, true, true, false, false);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.fan_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Ventilation", true, false, true, true, false);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.win_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Fenêtres", true, false, false, true, false);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.gar_btn).setOnClickListener(v -> {
             controlPanel = new ControlPanel(this, "Garage", true, true, false, false, false);
             controlPanel.setPanelLayout();
-            PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideInFromBottom(findViewById(R.id.panel), 300);
         });
 
         findViewById(R.id.close_btn).setOnClickListener(v -> {
-            PanelAnimator.slideOutToBottom(findViewById(R.id.panel), 300);
+            PanelAnimatorV2.slideOutToBottom(findViewById(R.id.panel), 300);
         });
     }
 
