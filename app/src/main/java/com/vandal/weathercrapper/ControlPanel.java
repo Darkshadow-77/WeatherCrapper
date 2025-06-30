@@ -152,6 +152,9 @@ public class ControlPanel {
         if (!state) {
             View removable = activity.findViewById(id);
             removable.setVisibility(View.GONE);
+        }else{
+            View aadable = activity.findViewById(id);
+            aadable.setVisibility(View.VISIBLE);
         }
     }
 
