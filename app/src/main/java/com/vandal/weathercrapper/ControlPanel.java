@@ -65,9 +65,9 @@ public class ControlPanel {
     // Sets a SeekBar (slider) and updates a label with its current value while also updating the panel label
     public void setAnalogPanel(IntSupplier getter,IntConsumer setter,int seekBarId, int stateId,String unit) {
         SeekBar seekBar = activity.findViewById(seekBarId);
-        seekBar.setProgress(getter.get());
+        seekBar.setProgress(getter.getAsInt());
         TextView analogState = activity.findViewById(stateId);
-        analogState.setText(String.valueOf(getter.get())+unit);
+        analogState.setText(String.valueOf(getter.getAsInt())+unit);
         TextView analogLabel = activity.findViewById(R.id.analog_label);
         analogLabel.setText(this.title); // Display the name of the analog control
 
@@ -96,11 +96,11 @@ public class ControlPanel {
         ImageButton dec = activity.findViewById(decId);
         ImageButton inc = activity.findViewById(incId);
         TextView numericState = activity.findViewById(stateId);
-        numericState.setText(String.valueOf(getter.get())+unit);
+        numericState.setText(String.valueOf(getter.getAsInt())+unit);
         TextView numericLabel = activity.findViewById(R.id.numeric_label);
         numericLabel.setText(this.title); // Label reflects the feature (e.g. ventilation)
 
-        final int[] value = {getter.get()};
+        final int[] value = {getter.getAsInt()};
 
         inc.setOnClickListener(v -> {
             if (value[0] < max) {
