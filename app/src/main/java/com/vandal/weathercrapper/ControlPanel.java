@@ -19,6 +19,9 @@ public class ControlPanel {
     private final boolean analogPanel;
     private final boolean numericPanel;
     private final boolean lightsPanel;
+    
+    //Setting data manager
+    UserData data = UserData.getInstance();
 
     // Constructor: initializes the panel with the configuration flags and title
     public ControlPanel(Activity activity, String title, boolean panel, boolean statePanel, boolean analogPanel, boolean numericPanel, boolean lightsPanel) {
@@ -30,26 +33,36 @@ public class ControlPanel {
         this.numericPanel = numericPanel;
         this.lightsPanel = lightsPanel;
     }
-
+     /*Suppliers and consummers on panels setters
+      * are used to retrieve getters 
+      * and setters from UserData
+      */
     // Sets a Switch control and updates a label based on its state (ON/OFF or Ouvert/Fermé if title is 'garage')
-    public void setStatePanel(int switchId, int stateId) {
-        Switch vSwitch = activity.findViewById(switchId);
-        TextView stateLabel = activity.findViewById(stateId);
-        vSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (!this.title.equalsIgnoreCase("garage")) {
+    private void setStateLabel(TextView stateLabel,boolean isChecked){
+        if (!this.title.equalsIgnoreCase("garage")) {
                 String stateText = isChecked ? "ON" : "OFF";
                 stateLabel.setText(stateText);
             } else {
                 String stateText = isChecked ? "Ouvert" : "Fermé";
                 stateLabel.setText(stateText);
             }
+    }
+    public void setStatePanel(Supplier<Boolean> getter,Consumer<Boolean> setter,int switchId, int stateId) {
+        Switch vSwitch = activity.findViewById(switchId);
+        vSwitch.setChecked(getter.get());
+        TextView stateLabel = activity.findViewById(stateId);
+        vSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            setter.accept(isChecked);
+            setStateLabel(stateLabel,isChecked);
         });
     }
 
     // Sets a SeekBar (slider) and updates a label with its current value while also updating the panel label
-    public void setAnalogPanel(int seekBarId, int stateId,String unit) {
+    public void setAnalogPanel(IntSupplier getter,IntConsumer setter,int seekBarId, int stateId,String unit) {
         SeekBar seekBar = activity.findViewById(seekBarId);
+        seekBar.setProgress(getter.get());
         TextView analogState = activity.findViewById(stateId);
+        analogState.setText(String.valueOf(getter.get())+unit);
         TextView analogLabel = activity.findViewById(R.id.analog_label);
         analogLabel.setText(this.title); // Display the name of the analog control
 
@@ -66,46 +79,50 @@ public class ControlPanel {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                // Optional: can be used to commit/send value
+                // Used to commit/send value
+                int prog = seekBar.getProgress();
+                setter.accept(prog);
             }
         });
     }
 
     // Sets a numeric increment/decrement control with value limits and real-time updates
-    public void setNumericPanel(int decId, int incId, int stateId, int min, int max,int step,String unit) {
+    public void setNumericPanel(IntSupplier getter,IntConsumer setter,int decId, int incId, int stateId, int min, int max,int step,String unit) {
         ImageButton dec = activity.findViewById(decId);
         ImageButton inc = activity.findViewById(incId);
         TextView numericState = activity.findViewById(stateId);
+        numericState.setText(String.valueOf(getter.get())+unit);
         TextView numericLabel = activity.findViewById(R.id.numeric_label);
         numericLabel.setText(this.title); // Label reflects the feature (e.g. ventilation)
 
-        final int[] value = {min};
-        numericState.setText(String.valueOf(value[0])+unit); // Initial value
+        final int[] value = {getter.get()};
 
         inc.setOnClickListener(v -> {
             if (value[0] < max) {
                 value[0]+= step;
-                numericState.setText(String.valueOf(value[0]));
+                numericState.setText(String.valueOf(value[0])+unit);
+                setter.accept(value[0]);
             }
         });
 
         dec.setOnClickListener(v -> {
             if (value[0] > min) {
                 value[0]-= step;
-                numericState.setText(String.valueOf(value[0]));
+                numericState.setText(String.valueOf(value[0])+unit);
+                setter.accept(value[0]);
             }
         });
     }
 
     // Combines multiple Switch+Label pairs for lights (e.g., indoors, outdoors)
     public void setLightPanel(
-        int switchId1, int labelId1,
-        int switchId2, int labelId2,
-        int switchId3, int labelId3
+        Supplier<Boolean> getter0,Consumer<Boolean> setter0,int switchId1, int labelId1,
+        Supplier<Boolean> getter1,Consumer<Boolean> setter1,int switchId2, int labelId2,
+        Supplier<Boolean> getter2,Consumer<Boolean> setter2,int switchId3, int labelId3
     ) {
-        setStatePanel(switchId1, labelId1);
-        setStatePanel(switchId2, labelId2);
-        setStatePanel(switchId3, labelId3);
+        setStatePanel(getter0,setter0,switchId1, labelId1);
+        setStatePanel(getter1,setter1,switchId2, labelId2);
+        setStatePanel(getter2,setter2,switchId3, labelId3);
     }
 
     // Dynamically sets up the panel components based on the title
@@ -113,32 +130,32 @@ public class ControlPanel {
         switch (title.toLowerCase()) {
             case "éclairage":
                 setLightPanel(
-                    R.id.indoors_state_switch, R.id.indoors_state_text,
-                    R.id.compound_state_switch, R.id.compound_state_text,
-                    R.id.outdoors_state_switch, R.id.outdoors_state_text
+                    data::isIndoorsLightOn,data::setIndoorsLightOn,R.id.indoors_state_switch, R.id.indoors_state_text,
+                    data::isCompoundLightOn,data::setCompoundLightOn,R.id.compound_state_switch, R.id.compound_state_text,
+                    data::isOutdoorsLightOn,data::setOutdoorsLightOn,R.id.outdoors_state_switch, R.id.outdoors_state_text
                 );
                 break;
 
             case "chauffage":
-                setStatePanel(R.id.state_switch, R.id.state_text);
-                setAnalogPanel(R.id.analog_seekbar, R.id.analog_state,"°C");
+                setStatePanel(data::isHeaterState,data::setHeaterState,R.id.state_switch, R.id.state_text);
+                setAnalogPanel(data::getHeaterTemp,data::setHeaterTemp,R.id.analog_seekbar, R.id.analog_state,"°C");
                  break;       
             case "climatisation":
-                setStatePanel(R.id.state_switch, R.id.state_text);
-                setAnalogPanel(R.id.analog_seekbar, R.id.analog_state,"°F");
+                setStatePanel(data::isAcState,data::setAcState,R.id.state_switch, R.id.state_text);
+                setAnalogPanel(data::getAcTemp,data::setAcTemp,R.id.analog_seekbar, R.id.analog_state,"°F");
                 break;
 
             case "ventilation":
-                setNumericPanel(R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 5,1,"");
-                setStatePanel(R.id.state_switch, R.id.state_text);
+                setNumericPanel(data::getFanSpeed,data::setFanSpeed,R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 5,1,"");
+                setStatePanel(data::isFanState,data::setFanState,R.id.state_switch, R.id.state_text);
                 break;
 
             case "fenêtres":
-                setNumericPanel(R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 100,10,"%");
+                setNumericPanel(data::getWindowOpenPercent, data::setWindowOpenPercent,R.id.numeric_dec, R.id.numeric_inc, R.id.numeric_state, 0, 100,10,"%");
                 break;
 
             case "garage":
-                setStatePanel(R.id.state_switch, R.id.state_text);
+                setStatePanel(data::isGarageOpen,data::setGarageOpen,R.id.state_switch, R.id.state_text);
                 break;
 
             default:
@@ -153,8 +170,8 @@ public class ControlPanel {
             View removable = activity.findViewById(id);
             removable.setVisibility(View.GONE);
         }else{
-            View aadable = activity.findViewById(id);
-            aadable.setVisibility(View.VISIBLE);
+            View addable = activity.findViewById(id);
+            addable.setVisibility(View.VISIBLE);
         }
     }
 

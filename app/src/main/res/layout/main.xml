@@ -219,7 +219,7 @@
 							android:id="@+id/win_btn"
 							android:layout_width="70dp"
 							android:layout_height="70dp"
-							android:src="@drawable/ic_browse"
+							android:src="@drawable/ic_browse_dark"
 							android:background="@drawable/box_rounded"
 							android:backgroundTint="#E1BEE7"
 							android:contentDescription="Fenêtres" />
@@ -438,6 +438,13 @@
 				android:layout_height="wrap_content"
 				android:gravity="center_vertical"
 				android:orientation="vertical">
+					<TextView
+						android:text="Indoors"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:textSize="18sp"
+						android:textStyle="bold"/>
 				<RelativeLayout
 					android:id="@+id/indoors"
 					android:layout_width="match_parent"
@@ -459,6 +466,13 @@
 						android:layout_alignParentEnd="true"
 						android:layout_margin="10dp"/>
 				</RelativeLayout>
+					<TextView
+						android:text="Compound"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:textSize="18sp"
+						android:textStyle="bold"/>
 				<RelativeLayout
 					android:id="@+id/compound"
 					android:layout_width="match_parent"
@@ -480,6 +494,13 @@
 						android:layout_alignParentEnd="true"
 						android:layout_margin="10dp"/>
 				</RelativeLayout>
+							<TextView
+						android:text="Outdoors"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:textSize="18sp"
+						android:textStyle="bold"/>
 				<RelativeLayout
 					android:id="@+id/outdoors"
 					android:layout_width="match_parent"

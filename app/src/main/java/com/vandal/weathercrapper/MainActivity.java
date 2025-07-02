@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         });
 
         findViewById(R.id.fan_btn).setOnClickListener(v -> {
-            controlPanel = new ControlPanel(this, "Ventilation", true, false, true, true, false);
+            controlPanel = new ControlPanel(this, "Ventilation", true, false, false, true, false);
             controlPanel.setPanelLayout();
             PanelAnimator.slideInFromBottom(findViewById(R.id.panel), 300);
         });
