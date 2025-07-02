@@ -56,9 +56,11 @@ public class ControlPanel {
         Switch vSwitch = activity.findViewById(switchId);
         vSwitch.setChecked(getter.get());
         TextView stateLabel = activity.findViewById(stateId);
+        setStateLabel(stateLabel,getter.get());
         vSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            setter.accept(isChecked);
             setStateLabel(stateLabel,isChecked);
+            setter.accept(isChecked);
+            Toast.makeText(activity,title+" Has been modified", Toast.LENGTH_SHORT).show();
         });
     }
 
