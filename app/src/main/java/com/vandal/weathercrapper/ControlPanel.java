@@ -8,6 +8,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.view.View;
 
+import java.util.function.Supplier;
+import java.util.function.Consumer;
+import java.util.function.IntSupplier;
+import java.util.function.IntConsumer;
+
 public class ControlPanel {
     // Core UI-related data
     private final Activity activity;
