@@ -32,7 +32,7 @@ public class UserData {
         compoundLightOn = false;
         heaterState = false;
         heaterTemp = 20;
-        acTempState = false;
+        acState = false;
         acTemp = 22;
         fanState = false;
         fanSpeed = 0;
