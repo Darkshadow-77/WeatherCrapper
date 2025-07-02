@@ -60,7 +60,9 @@ public class ControlPanel {
         vSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             setStateLabel(stateLabel,isChecked);
             setter.accept(isChecked);
-            Toast.makeText(activity,title+" Has been modified", Toast.LENGTH_SHORT).show();
+            if(getter.get()){
+                Toast.makeText(activity,title+" is Set to up", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

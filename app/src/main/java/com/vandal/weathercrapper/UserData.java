@@ -25,10 +25,16 @@ public class UserData {
 
     // === Constructor is private (singleton) ===
     private UserData() {
-        // Set defaults if needed
+        //Setting default values
         lightsOn = false;
+        indoorsLightOn = false;
+        outdoorsLightOn = false;
+        compoundLightOn = false;
+        heaterState = false;
         heaterTemp = 20;
+        acTempState = false;
         acTemp = 22;
+        fanState = false;
         fanSpeed = 0;
         windowOpenPercent = 0;
     }
